@@ -1,0 +1,623 @@
+/* CSS para telas maiores que 1024 pixels e media queries adicionais */
+
+@media only screen and (max-width: 1024px) {
+  /* Estilos para telas menores que 1024 pixels */
+  
+  /* Todo o CSS fornecido vai aqui */
+  
+  @media only screen and (max-width: 600px) {
+    /* Estilos para telas menores que 600 pixels */
+    
+    /* Todo o CSS fornecido vai aqui */
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos para telas entre 601 e 1024 pixels */
+    
+    /* Todo o CSS fornecido vai aqui */
+  }
+}
+
+/* Estilos que não estão dentro das media queries */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit',sans-serif;
+}
+body {
+  
+  background-image: url("C:\\Users\\andre\\OneDrive\\Documentos\\12\\Nova Pasta\\marca_d_agua.jpg"); /* Updated path */
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgba(3, 45, 107, 0.8);
+  color: #ffffff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.407);
+}
+
+
+header img {
+  top: -5%;
+  height: 90px;
+  width: 190px; /* aumentar o tamanho da imagem */
+  border-radius: 0px 20px 20px 0px; /* arredondar apenas o lado esquerdo */
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 14px;
+  max-width: 50%;
+  text-align: center;
+  margin-left: 20%;
+}
+
+header p {
+  margin: 0;
+  font-size: 14px;
+  margin-left: 20%;
+}
+
+.subheader {
+  background-color: #0caeb0;
+  color: #ffffff;
+  padding: 3px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.448);
+}
+
+.subheader button {
+  background-color: #1ec6c9;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.subheader button:hover {
+  background-color: #a7f4f5fb;
+}
+
+.Icons3{
+  margin-right: 5px;
+}
+/* sidebar*/
+
+
+nav.menu-lateral.expandir{
+  width:360px;
+}   
+
+.btn-expandir{
+  width: 100%;
+  padding-left: 10px;
+}
+
+.btn-expandir > i{
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;    
+}
+
+ul{
+  height: 100%;
+  list-style-type: none;
+}
+ul li.item-menu{
+  transition: 1s;
+  
+}
+
+ul li.ativo{
+  background-color: #0caeb0;
+}
+ul li.item-menu:hover{
+  background: #0caeb0;
+}
+
+
+
+ul li.item-menu {
+  margin: 0; /* Remove todas as margens */
+  background-color: rgba(3, 45, 107, 0.7);
+ 
+}
+
+
+
+
+
+ul li.item-menu a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 12px 4%;
+  display: flow-root;
+  margin-bottom: 1px;
+  line-height: 1px;
+}
+
+/* titulos lateral expandir*/
+ul h1{
+  font-size: 20px;
+  
+  
+}
+
+
+
+ul li.item-menu a .txt-link{
+  margin-left: 70px;
+  transition: 1s;
+  opacity: 0;
+  margin-bottom: 10px; /* Ajuste o valor conforme necessário */
+
+}
+nav.menu-lateral.expandir .txt-link{
+  margin-left: 10px;
+  opacity: 1;
+}
+ul li.item-menu a .icon > i{
+  font-size: 25px;
+}
+
+.icon2{
+  width: 100%;
+}
+/* Estilizando a barra de rolagem */
+nav.menu-lateral::-webkit-scrollbar {
+  width: 5px; /* Largura da barra de rolagem */
+}
+
+/* Estilizando o controle deslizante da barra de rolagem */
+nav.menu-lateral::-webkit-scrollbar-thumb {
+  background-color: rgba(3, 45, 107, 0.5); /* Cor do controle deslizante */
+  border-radius: 10px; /* Borda arredondada */
+}
+
+/* Estilizando a barra de rolagem quando o mouse estiver sobre ela */
+nav.menu-lateral:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(3, 45, 107, 0.7); /* Cor do controle deslizante quando o mouse estiver sobre ele */
+}
+
+/* ... Seus estilos existentes ... */
+
+/* Se necessário, ajuste os estilos da barra lateral */
+/* Estilos para o menu lateral */
+nav.menu-lateral {
+  width: 80px;
+  height: calc(100vh - 117px); /* Altura máxima ajustada para o tamanho da tela, excluindo o cabeçalho e o subcabeçalho */
+  background-color: rgba(3, 45, 107, 0.8); /* Cor de fundo azul escuro */
+  padding: 0; /* Removido o padding */
+  box-shadow: 4px 0 0 #0caeb0;
+  position: fixed;
+  top: 123px;
+  left: 0;
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+  z-index: 1;
+  transition: .6s;
+}
+table {
+  font-weight: 400;
+  min-width: 420px;
+  width: 100%;
+  
+  thead {
+    display: none;
+    font-weight: 500;
+  }
+  
+  tbody {
+    tr {
+      border: 1px solid #dad6eb;
+      border-radius: 5px;
+      display: block;
+      padding: 30px;
+      margin-bottom: 30px;
+      
+      td {
+        display: block;
+        font-weight: 500;
+        padding: 5px;
+        position: relative;
+        text-align: right;
+        
+        button {
+          background: rgb(3, 45, 107);
+          border: none;
+          border-radius: 20px;
+          box-shadow: 0 4px 8px transparentize(#222, .8);
+          bottom: -30px;
+          color: #fff;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 700;
+          left: 30%;
+          padding: 10px 0;
+          position: absolute;
+          transform: translate(-50%, 50%);
+         
+          
+          &:hover,
+          &:focus {
+            cursor: pointer;
+          }
+        }
+        
+        &:before {
+          color: #8a8a87;
+          content: attr(data-label);
+          font-weight: 400;
+          left: 5px;
+          position: absolute;
+        }        
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  table {
+    border: 1px solid #eee;
+    border-collapse: collapse;
+    max-width: 900%;
+    max-height: 900%;
+    text-align: left;
+    
+    thead {
+      display: table-header-group;
+      
+      th {
+        padding: 10px;
+      }
+    }
+    
+    tbody {
+      font-size: .875em;
+      
+      tr {
+        border: none;
+        display: table-row;
+        
+        &:nth-child(odd) {
+          background: #eee;
+        }
+        
+        td {
+          display: table-cell;
+          font-weight: 400;
+          padding: 6px;
+          text-align: left;
+          
+          button {
+            display: inline-block;
+            padding: 10px 15px;
+            position: initial;
+            transform: translate(0);
+            width: auto;
+          }
+          
+          &:before {
+            display: none;
+          }
+          
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.table-container {
+  width: 60%;
+  padding: 30px;
+  max-width: 900px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -60%);
+  margin-top: 90px; /* Ajustar a margem conforme necessário */
+  max-width: 90%; /* Defina a largura máxima desejada */
+  max-height: 90%; /* Defina a altura máxima desejada */
+  overflow: auto; /* Adicione uma barra de rolagem quando necessário */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.433);
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .table-container {
+    padding: 20px; /* Ajusta o preenchimento interno quando a tela for menor ou igual a 768px */
+  }
+}
+
+
+/* Restante do seu CSS permanece igual */
+
+
+.table-container h1{
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(3, 45, 107);
+  padding: 1%;
+
+}
+
+
+
+.subheader3 {
+  display: flex;
+  align-items: center;
+}
+
+.subheader3 button,
+.subheader3 select {
+  margin-right: 10px;
+}
+#search-btn{
+  padding: 50%;
+}
+
+.Icons3{
+  margin-right: 5px;
+}
+
+#tabelaFuncionariosForm{
+  display: none;
+}
+
+.form-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 9px;
+  box-shadow: 0 0 40px rgb(0, 0, 0);
+  width: 50%; /* Alterada para 100% */
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -70%);
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-container {
+    padding: 20px;
+  }
+}
+
+
+.subheader2 {
+  border-radius: 8px;
+  background-color: rgb(3, 45, 107);
+  color: #ffffff;
+  padding: 15px;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(240, 221, 221, 0.1);
+  top: -50px; /* Ajuste o valor top conforme necessário */
+  
+}
+
+.subheader2 p {
+  margin: 0;
+}
+
+.form-container-OPTION {
+  background-color: rgb(255, 255, 255);
+  border-radius: 9px;
+  box-shadow: 0 0 40px rgb(0, 0, 0);
+  width: 80%; /* Alterada para 100% */
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  transform: translate(-60%, -70%);
+
+}
+
+@media only screen and (max-width: 768px) {
+  .form-container-OPTION {
+    padding: 20px;
+  }
+}
+
+.button-row {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100px; /* Defina a altura desejada para a linha */
+}
+
+.button-row button {
+  background-color: rgba(3, 45, 107, 0.8);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+}
+
+/* Adiciona o efeito de fundo desfocado quando a classe 'modal-open' é aplicada ao body */
+.modal-open::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo desfocada */
+  backdrop-filter: blur(5px); /* Desfoque para efeito de fundo */
+  z-index: 1000; /* Z-index alto para ficar acima de outros elementos */
+}
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="date"],
+select {
+  width: calc(50% - 5px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+  flex: 1;
+  margin-right: 10px;
+}
+
+
+
+
+
+ul li.item-menu2{
+  transition: 1s;
+  
+}
+
+
+ul li.item-menu2:hover{
+  background: #0caeb0;
+}
+
+
+ul li.item-menu2 a .icon > i{
+  font-size: 25px;
+}
+
+
+ul li.item-menu2 a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 12px 4%;
+  display: flow-root;
+  margin-bottom: 1px;
+  line-height: 1px;
+}
+
+
+
+ul li.item-menu2 a .txt-link{
+  margin-left: 70px;
+  transition: 1s;
+  opacity: 0;
+  margin-bottom: 10px; /* Ajuste o valor conforme necessário */
+
+}
+
+#abrirFormulario {
+  /* Adicione estilos específicos para o botão com id abrirFormulario */
+  background-color: rgb(3, 45, 107); /* Cor de fundo azul */
+  color: #fff; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  border-radius: 50%;
+  padding: 10px 15px; /* Preenchimento interno */
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+#abrirFormulario:hover {
+  /* Estilos de hover para o botão */
+  background-color: #071d34; /* Cor de fundo azul mais escura */
+}
+
+
+#downloadIcon{
+  /* Adicione estilos específicos para o botão com id abrirFormulario */
+  background-color: rgb(3, 45, 107); /* Cor de fundo azul */
+  color: #fff; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  border-radius: 50%;
+  padding: 10px 15px; /* Preenchimento interno */
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+#downloadIcon:hover {
+  /* Estilos de hover para o botão */
+  background-color: #071d34; /* Cor de fundo azul mais escura */
+}
+
+#pesquisa{
+  margin-top: 20px;
+  font-size: 100%;
+  padding: 10px;
+}
+
+#numLinhas{
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.teste3{
+  align-items: right;
+}
+
+

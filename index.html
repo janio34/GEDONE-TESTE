@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta tags e link para o CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='style.css'>
+    <title>GED ONE - Gerenciamento Eletrônico de Documentos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <img src="C:\Users\andre\OneDrive\Desktop\PROGRAMAÇÃO DA IMAGE ONE\aegea-1.jpg" alt="AEGEA"> <br>
+        <h1>GED ONE - Gerenciamento Eletrônico de Documentos</h1>
+        <p>USUÁRIO: <br></br><span id="dataAtual">
+                <span class="icon2"><i class="bi bi-person-circle" style="font-size: 36px;"></i></span>
+            </span></p>
+    </header>
+
+
+    <div class="subheader">
+        <button><span class="Icons3"><i class="bi bi-house" style="font-size: 18px;"></i></span>Inicio</button>
+        <button><span class="Icons3"><i class="bi bi-folder2-open" style="font-size: 18px;"></i></span>Dossiê</button>
+        <button><span class="Icons3"><i class="bi bi-card-list" style="font-size: 18px;"></i></span>Relatórios</button>
+        <button><span class="Icons3"><i class="bi bi-gear" style="font-size: 18px;"></i></span>Configurações</button>
+        <button><span class="Icons3"><i class="bi bi-power" style="font-size: 18px;"></i></span>Sair</button>
+    </div>
+
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+        </div>
+        <ul>
+            <li class="item-menu" data-target="CadastrosFuncionariosForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-people"></i></span>
+                        <span class="txt-link">Cadastros de Funcionários</span>
+                    </h1>
+                </a>
+            </li>
+        
+            <li class="item-menu" data-target="SincronizarDocumentosForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-arrow-counterclockwise"></i></span>
+                        <span class="txt-link">Sincronizar Documentos</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu" data-target="RessincronizarForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-arrow-counterclockwise"></i></span>
+                        <span class="txt-link">Ressincronizar</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu" data-target="AtualizarBancoForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-arrow-counterclockwise"></i></span>
+                        <span class="txt-link">Atualizar Banco de Dados</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu" data-target="CadastrosBasicosForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-pencil-square"></i></span>
+                        <span class="txt-link">Cadastros Basicos</span>
+                    </h1>
+                </a>
+            </li>
+        
+            <li class="item-menu2" id="Empresa" data-target="EmpresaForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Empresa</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Estabelecimento" data-target="EstabelecimentoForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Estabelecimento</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Regionais" data-target="RegionaisForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Regionais</span>
+                </a>
+            </li>
+
+            <li class="item-menu2" id="Regiões" data-target="RegiõesForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Regiões</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Unidades" data-target="UnidadesForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Unidades</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Áreas" data-target="ÁreasForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Áreas</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Setor" data-target="SetorForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Setor</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="GruposDocumentos" data-target="GruposDocumentosForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Grupo de Documentos</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="TiposDocumentos" data-target="TiposDocumentosForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Tipo de Documento</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Ocupação" data-target="OcupaçãoForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Ocupação</span>
+                </a>
+            </li>
+            <li class="item-menu" data-target="AtualizarBancoForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-shield-exclamation"></i></span>
+                        <span class="txt-link">Logs de Sincronização</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu2" id="ErrosDepartamentos" data-target="ErrosDepartamentosForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Erros Departamentos</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="ErrosRH" data-target="ErrosRHForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Erros RH</span>
+                </a>
+            </li>
+            <li class="item-menu" data-target="DocumentosForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-file-text"></i></span>
+                        <span class="txt-link">Documentos</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu2" id="ApagarDocumento" data-target="ApagarDocumentoForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Apagar Documentos</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="DocumentosApagados" data-target="DocumentosApagadosForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Documentos Apagados</span>
+                </a>
+            </li>
+            <li class="item-menu" data-target="AtivarADForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Ativar AD</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu" data-target="SegurançaForm">
+                <a href="#">
+                    <h1>
+                        <span class="icon"><i class="bi bi-shield-shaded"></i></span>
+                        <span class="txt-link">Segurança</span>
+                    </h1>
+                </a>
+            </li>
+            <li class="item-menu2" id="usuarios" data-target="usuariosForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Usuarios</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="Permissões" data-target="PermissõesForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Permissões</span>
+                </a>
+            </li>
+            <li class="item-menu2" id="AlteraSenha" data-target="AlteraSenhaForm">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-record2-fill"></i></span>
+                    <span class="txt-link">Altera Senha</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div id="tabelaFuncionariosForm" class="table-container">
+        <table>
+          
+            <thead>
+                <div>
+                    <h1>FUNCIONÁRIOS</h1>
+                </div>
+                <div class="subheader3">
+                    
+                        <button id="abrirFormulario"><i class="bi bi-plus"  style="font-size: 25px;"></i></button>
+                        <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+                   
+                        <select id="numLinhas" name="numLinhas">
+                          <option value="" disabled selected hidden> NºLinhas</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                      </select>
+                      
+                    
+                    <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+              </div>
+            <tr>
+              <th>Unidade</th>
+              <th>Matricula</th>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>Admissão</th>
+              <th>Situação</th>
+              <th>Desligamento</th>
+              <th>Editar</th>
+              <th>remover</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+
+    <div id="tabelaEmpresaForm" class="table-container">
+        <table>
+          
+            <thead>
+                <div>
+                    <h1>EMPRESA</h1>
+                </div>
+                <div class="subheader3">
+                    
+                  <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+                  <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+             
+                  <select id="numLinhas" name="numLinhas">
+                    <option value="" disabled selected hidden> NºLinhas</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="100">100</option>
+                </select>
+                
+              
+              <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+        </div>
+            <tr>
+              <th>Código</th>
+              <th>Razão Social</th>
+              <th>Url</th>
+              <th>Caminho Documento</th>
+              <th>Editar</th>
+              <th>Remover</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Código"></td>
+              <td data-label="Razão Social"></td>
+              <td data-label="Url"></td>
+              <td data-label="Caminho Documento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            
+            <tr>
+                <td data-label="Código"></td>
+                <td data-label="Razão Social"></td>
+                <td data-label="Url"></td>
+                <td data-label="Caminho Documento"></td>
+                <td>
+                  <button><i class="bi bi-pencil-fill"></i></button>
+                </td>
+                <td>
+                  <button><i class="bi bi-trash3-fill"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Código"></td>
+                <td data-label="Razão Social"></td>
+                <td data-label="Url"></td>
+                <td data-label="Caminho Documento"></td>
+                <td>
+                  <button><i class="bi bi-pencil-fill"></i></button>
+                </td>
+                <td>
+                  <button><i class="bi bi-trash3-fill"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Código"></td>
+                <td data-label="Razão Social"></td>
+                <td data-label="Url"></td>
+                <td data-label="Caminho Documento"></td>
+                <td>
+                  <button><i class="bi bi-pencil-fill"></i></button>
+                </td>
+                <td>
+                  <button><i class="bi bi-trash3-fill"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Código"></td>
+                <td data-label="Razão Social"></td>
+                <td data-label="Url"></td>
+                <td data-label="Caminho Documento"></td>
+                <td>
+                  <button><i class="bi bi-pencil-fill"></i></button>
+                </td>
+                <td>
+                  <button><i class="bi bi-trash3-fill"></i></button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    
+    <div id="tabelaEstabelecimentoForm" class="table-container">
+        <table>
+          
+            <thead>
+                <div>
+                    <h1>ESTABELECIMENTO</h1>
+                </div>
+                <div class="subheader3">
+                    
+                  <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+                  <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+             
+                  <select id="numLinhas" name="numLinhas">
+                    <option value="" disabled selected hidden> NºLinhas</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="100">100</option>
+                </select>
+                
+              
+              <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+        </div>
+            <tr>
+              <!-- colunas para preencher-->
+            </tr>
+          </thead>
+          <tbody>
+            
+            <!-- linhas para preencher-->
+            
+          </tbody>
+        </table>
+    </div>
+
+
+    <div id="tabelaRegionaisForm" class="table-container">
+        <table>
+          
+            <thead>
+                <div>
+                    <h1>REGIONAIS</h1>
+                </div>
+                <div class="subheader3">
+                    
+                  <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+                  <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+             
+                  <select id="numLinhas" name="numLinhas">
+                    <option value="" disabled selected hidden> NºLinhas</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="100">100</option>
+                </select>
+                
+              
+              <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+        </div>
+              </div>
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Editar</th>
+              <th>Remover</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+
+    <div id="tabelaRegiõesForm" class="table-container">
+        <table>
+          
+            <thead>
+                <div>
+                    <h1>REGIÕES</h1>
+                </div>
+                <div class="subheader3">
+                    
+                  <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+                  <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+             
+                  <select id="numLinhas" name="numLinhas">
+                    <option value="" disabled selected hidden> NºLinhas</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="100">100</option>
+                </select>
+                
+              
+              <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+        </div>
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Editar</th>
+              <th>Remover</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <div id="tabelaRegiõesForm" class="table-container">
+        <table>
+          
+            <thead>
+                <div>
+                    <h1>REGIONAIS</h1>
+                </div>
+                <div class="subheader3">
+                    
+                  <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+                  <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+             
+                  <select id="numLinhas" name="numLinhas">
+                    <option value="" disabled selected hidden> NºLinhas</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="100">100</option>
+                </select>
+                
+              
+              <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+        </div>
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Editar</th>
+              <th>Remover</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Unidade"></td>
+              <td data-label="Matricula"></td>
+              <td data-label="Nome"></td>
+              <td data-label="Cargo"></td>
+              <td data-label="Admissão"></td>
+              <td data-label="Situação"></td>
+              <td data-label="Desligamento"></td>
+              <td>
+                <button><i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td>
+                <button><i class="bi bi-trash3-fill"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+
+    <div id="tabelaUnidadesForm" class="table-container">
+      <table>
+        
+          <thead>
+              <div>
+                  <h1>UNIDADES</h1>
+              </div>
+              <div class="subheader3">
+                    
+                <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+           
+                <select id="numLinhas" name="numLinhas">
+                  <option value="" disabled selected hidden> NºLinhas</option>
+                  <option value="8">8</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="40">40</option>
+                  <option value="100">100</option>
+              </select>
+              
+            
+            <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+      </div>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Editar</th>
+            <th>Remover</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Unidade"></td>
+            <td data-label="Matricula"></td>
+            <td data-label="Nome"></td>
+            <td data-label="Cargo"></td>
+            <td data-label="Admissão"></td>
+            <td data-label="Situação"></td>
+            <td data-label="Desligamento"></td>
+            <td>
+              <button><i class="bi bi-pencil-fill"></i></button>
+            </td>
+            <td>
+              <button><i class="bi bi-trash3-fill"></i></button>
+            </td>
+          </tr>
+          
+          <tr>
+            <td data-label="Unidade"></td>
+            <td data-label="Matricula"></td>
+            <td data-label="Nome"></td>
+            <td data-label="Cargo"></td>
+            <td data-label="Admissão"></td>
+            <td data-label="Situação"></td>
+            <td data-label="Desligamento"></td>
+            <td>
+              <button><i class="bi bi-pencil-fill"></i></button>
+            </td>
+            <td>
+              <button><i class="bi bi-trash3-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Unidade"></td>
+            <td data-label="Matricula"></td>
+            <td data-label="Nome"></td>
+            <td data-label="Cargo"></td>
+            <td data-label="Admissão"></td>
+            <td data-label="Situação"></td>
+            <td data-label="Desligamento"></td>
+            <td>
+              <button><i class="bi bi-pencil-fill"></i></button>
+            </td>
+            <td>
+              <button><i class="bi bi-trash3-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Unidade"></td>
+            <td data-label="Matricula"></td>
+            <td data-label="Nome"></td>
+            <td data-label="Cargo"></td>
+            <td data-label="Admissão"></td>
+            <td data-label="Situação"></td>
+            <td data-label="Desligamento"></td>
+            <td>
+              <button><i class="bi bi-pencil-fill"></i></button>
+            </td>
+            <td>
+              <button><i class="bi bi-trash3-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Unidade"></td>
+            <td data-label="Matricula"></td>
+            <td data-label="Nome"></td>
+            <td data-label="Cargo"></td>
+            <td data-label="Admissão"></td>
+            <td data-label="Situação"></td>
+            <td data-label="Desligamento"></td>
+            <td>
+              <button><i class="bi bi-pencil-fill"></i></button>
+            </td>
+            <td>
+              <button><i class="bi bi-trash3-fill"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+  
+
+
+<div id="tabelaÁreasForm" class="table-container">
+    <table>
+      
+        <thead>
+            <div>
+                <h1>ÁREAS</h1>
+            </div>
+            <div class="subheader3">
+                    
+              <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+              <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+         
+              <select id="numLinhas" name="numLinhas">
+                <option value="" disabled selected hidden> NºLinhas</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="40">40</option>
+                <option value="100">100</option>
+            </select>
+            
+          
+          <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+    </div>
+          </div>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Editar</th>
+          <th>Remover</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Unidade"></td>
+          <td data-label="Matricula"></td>
+          <td data-label="Nome"></td>
+          <td data-label="Cargo"></td>
+          <td data-label="Admissão"></td>
+          <td data-label="Situação"></td>
+          <td data-label="Desligamento"></td>
+          <td>
+            <button><i class="bi bi-pencil-fill"></i></button>
+          </td>
+          <td>
+            <button><i class="bi bi-trash3-fill"></i></button>
+          </td>
+        </tr>
+        
+        <tr>
+          <td data-label="Unidade"></td>
+          <td data-label="Matricula"></td>
+          <td data-label="Nome"></td>
+          <td data-label="Cargo"></td>
+          <td data-label="Admissão"></td>
+          <td data-label="Situação"></td>
+          <td data-label="Desligamento"></td>
+          <td>
+            <button><i class="bi bi-pencil-fill"></i></button>
+          </td>
+          <td>
+            <button><i class="bi bi-trash3-fill"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Unidade"></td>
+          <td data-label="Matricula"></td>
+          <td data-label="Nome"></td>
+          <td data-label="Cargo"></td>
+          <td data-label="Admissão"></td>
+          <td data-label="Situação"></td>
+          <td data-label="Desligamento"></td>
+          <td>
+            <button><i class="bi bi-pencil-fill"></i></button>
+          </td>
+          <td>
+            <button><i class="bi bi-trash3-fill"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Unidade"></td>
+          <td data-label="Matricula"></td>
+          <td data-label="Nome"></td>
+          <td data-label="Cargo"></td>
+          <td data-label="Admissão"></td>
+          <td data-label="Situação"></td>
+          <td data-label="Desligamento"></td>
+          <td>
+            <button><i class="bi bi-pencil-fill"></i></button>
+          </td>
+          <td>
+            <button><i class="bi bi-trash3-fill"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Unidade"></td>
+          <td data-label="Matricula"></td>
+          <td data-label="Nome"></td>
+          <td data-label="Cargo"></td>
+          <td data-label="Admissão"></td>
+          <td data-label="Situação"></td>
+          <td data-label="Desligamento"></td>
+          <td>
+            <button><i class="bi bi-pencil-fill"></i></button>
+          </td>
+          <td>
+            <button><i class="bi bi-trash3-fill"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div id="tabelaSetorForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>SETORES</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Remover</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div id="tabelaGruposDocumentosForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>GRUPO DE DOCUMENTOS</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Remover</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div id="tabelaTiposDocumentosForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>TIPOS DE DOCUMENTOS</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Remover</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div id="tabelaOcupaçãoForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>OCUPAÇÕES</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Remover</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+    <div id="formularioCrud" class="form-container-OPTION" style="display: none;">
+        
+        <div class="subheader2">
+            <H1>Cadastrar Funcionário</H1>
+            <button id="fecharFormulario" class="teste3">&times;</button>
+        </div>
+        <form>
+            <div class="form-group">
+                <select id="Empresa" name="Empresa" placeholder="Empresa">
+                    <option value="">Empresa</option>
+                </select>
+                <select id="regional" name="regional">
+                    <option value="regional1_opcao1">Regional</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="unidade" name="unidade">
+                    <option value="unidade1_opcao1">Unidade</option>
+                </select>
+                <select id="regiao" name="regiao">
+                    <option value="regiao2_opcao1">Região</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" id="matricula" name="matricula" placeholder="Matrícula">
+                <input type="text" id="nome" name="nome" placeholder="Nome">
+                <input type="text" id="email" name="email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <input type="text" id="cargo" name="cargo" placeholder="Cargo">
+                <input type="date" id="admissao" name="admissao" placeholder="Data de Admissão">
+                <input type="text" id="cpf" name="cpf" placeholder="CPF">
+                <select id="pcd" name="pcd">
+                    <option value="pcd_sim">Sim</option>
+                    <option value="pcd_nao">Não</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="situacao" name="situacao">
+                    <option value="situacao_opcao1">Situação</option>
+                </select>
+                <select id="modo_ponto" name="modo_ponto">
+                    <option value="ponto_sim">Sim</option>
+                    <option value="ponto_não">não</option>
+                </select>
+                <select id="sistema_ponto" name="sistema_ponto">
+                    <option value="sistema_manual">BATE PONTO</option>
+                    <option value="sistema_biometrico">NÃO UTILIZA EFETIVIDADE</option>
+                    <option value="sistema_cartao">NÃO BATE PONTO</option>
+                </select>
+                <input type="date" id="desligamento" name="desligamento" placeholder="Data de Desligamento">
+            </div>
+            <div class="form-row button-row">
+              <button style="cursor:pointer" type="submit">Enviar</button>
+          </div>
+        </form>
+        </div>
+
+
+    <div id="SincronizarDocumentosForm" class="form-container">
+        <div class="subheader2">
+            <p>SINCRONIZAR DOCUMENTOS</p>
+        </div>
+        <form>
+            <div class="form-row button-row">
+                <button type="submit">SINCRONIZAR DOCUMENTOS</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="RessincronizarDocumentosForm" class="form-container">
+        <div class="subheader2">
+            <p>RESSINCRONIZAR DOCUMENTOS</p>
+        </div>
+        <form>
+            <div class="form-row button-row">
+                <button type="submit">RESSINCRONIZAR DOCUMENTOS</button>
+            </div>
+        </form>
+    </div>
+    <div id="AtualizarBancoForm" class="form-container">
+        <div class="subheader2">
+            <p>ATUALIZAR BANCO DE DADOS</p>
+        </div>
+        <form>
+            <div class="form-row button-row">
+                <button type="submit">ATUALIZAR BANCO DE DADOS</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="ErrosDepartamentosForm" class="form-container">
+      <div class="subheader2">
+          <p>ERROS DEPARTAMENTOS</p>
+      </div>
+      <form>
+          <div class="form-row button-row">
+              <button type="submit">Pesquisar</button>
+          </div>
+      </form>
+  </div>
+
+  <div id="ErrosRHForm" class="form-container">
+    <div class="subheader2">
+        <p>ERROS RH</p>
+    </div>
+    <form>
+        <div class="form-row button-row">
+            <button type="submit">Pesquisar</button>
+        </div>
+    </form>
+</div>
+<div id="ApagarDocumentoForm" class="form-container">
+  <div class="subheader2">
+      <p>APAGAR DOCUMENTO</p>
+      
+  </div>
+  <label for="texto">Informe as nomenclaturas abaixo separadas por ';'</label><br>
+  <label for="texto">Ex: 00000001_NOME_123456789_01_112_00000000_00_0001.PDF; 00000001_NOME_0123456789_01_113_00000000_00_0002.PDF</label><br>
+    <input type="text" id="texto" name="texto">
+  <form>
+      <div class="form-row button-row">
+          <button type="submit">APAGAR</button>
+      </div>
+  </form>
+</div>
+<div id="DocumentosApagadosForm" class="form-container">
+  <div class="subheader2">
+      <p>DOCUMENTOS APAGADOS</p>
+  </div>
+  <form>
+      <div class="form-row button-row">
+          <button type="submit">Pesquisar</button>
+      </div>
+  </form>
+</div>
+
+
+
+
+<div id="tabelausuariosForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>USUÁRIOS</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Remover</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+<div id="tabelaOcupaçãoForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>OCUPAÇÕES</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Remover</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div id="tabelaPermissõesForm" class="table-container">
+  <table>
+    
+      <thead>
+          <div>
+              <h1>PERMISSÕES</h1>
+          </div>
+          <div class="subheader3">
+                    
+            <button id="abrirFormulario"><i class="bi bi-plus" style="font-size: 30px;"></i></button>
+            <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa...">
+       
+            <select id="numLinhas" name="numLinhas">
+              <option value="" disabled selected hidden> NºLinhas</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+          </select>
+          
+        
+        <button  id="downloadIcon"> <i class="bi bi-download" style="font-size: 25px;"></i> </button>
+  </div>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>QTD Empresas</th>
+        <th>QTD Regionais</th>
+        <th>QTD Unidades</th>
+        <th>QTD Paginas</th>
+        <th>QTD menus</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Unidade"></td>
+        <td data-label="Matricula"></td>
+        <td data-label="Nome"></td>
+        <td data-label="Cargo"></td>
+        <td data-label="Admissão"></td>
+        <td data-label="Situação"></td>
+        <td data-label="Desligamento"></td>
+        <td>
+          <button><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button><i class="bi bi-trash3-fill"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div id="AlteraSenhaForm" class="form-container">
+  <div class="subheader2">
+      <p>ALTERAR SENHA</p>
+  </div>
+     
+      <input type="text" id="senha_atual" name="senha_atual" required placeholder="Senha atual"><br>
+  
+      
+      <input type="text" id="nova_senha" name="nova_senha" required placeholder="Nova senha"><br>
+  
+      
+      <input type="text" id="confirmar_senha" name="confirmar_senha" required placeholder="Confirmar senha"><br>
+  
+      <div class="form-row button-row">
+        <button type="submit">ALTERAR</button>
+    </div>
+</div>
+
+
+
+    <script src='script.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+
+</body>
+
+</html>
+
+
