@@ -82,7 +82,6 @@ header p {
   font-size: 14px;
   margin-left: 20%;
 }
-
 .subheader {
   background-color: #0caeb0;
   color: #ffffff;
@@ -112,9 +111,22 @@ header p {
   background-color: #a7f4f5fb;
 }
 
-.Icons3{
+.Icons3 {
   margin-right: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .subheader {
+    top: 60px; /* Ajuste a posição superior conforme necessário */
+    padding: 2px; /* Ajuste o preenchimento conforme necessário */
+  }
+
+  .subheader button {
+    padding: 6px 12px; /* Ajuste o preenchimento conforme necessário */
+    margin-right: 1px; /* Ajuste a margem conforme necessário */
+  }
+}
+
 /* sidebar*/
 
 
